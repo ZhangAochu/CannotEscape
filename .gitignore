@@ -10,9 +10,10 @@
 /[Aa]ssets/[Aa]sset[Ss]tore*
 *.autosave
 
-# ProjectSettings（保留核心配置）
-/[Pp]rojectSettings/*
-!/[Pp]rojectSettings/ProjectSettings.asset
+# ProjectSettings（保留所有关键配置）
+/[Pp]rojectSettings/*          # 忽略所有
+!/[Pp]rojectSettings/*.asset   # 允许所有 .asset 文件
+!/[Pp]rojectSettings/ProjectVersion.txt  # 允许版本文件
 
 # Packages（保留依赖清单）
 /[Pp]ackages/*
