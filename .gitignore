@@ -1,0 +1,35 @@
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Aa]ssets/[Aa]sset[Ss]tore*
+*.autosave
+
+# ProjectSettings（保留核心配置）
+/[Pp]rojectSettings/*
+!/[Pp]rojectSettings/ProjectSettings.asset
+
+# Packages（保留依赖清单）
+/[Pp]ackages/*
+!/[Pp]ackages/manifest.json
+
+# IDE
+.vs/
+.idea/
+*.csproj
+*.sln
+*.userprefs
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+*.stacktrace
