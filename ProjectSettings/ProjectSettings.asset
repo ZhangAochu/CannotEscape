@@ -718,3 +718,11 @@ PlayerSettings:
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0
+  
+  # 添加以下字段
+  defaultIsOrthographic: 1
+  defaultOrthographicSize: 5
+
+# 添加 editorSettings 配置
+editorSettings:
+  m_DefaultBehaviorMode: 0
