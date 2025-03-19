@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Persistence.unity
+    guid: c42fdf9cde3a3f94ba278f0f60c5258a
   - enabled: 1
     path: Assets/Scenes/Sickroom.unity
     guid: a21f50b509abe2942b3f5f1e4d4a60ac
+  - enabled: 1
+    path: Assets/Scenes/Corridor.unity
+    guid: ca183c550b507224ab78b91f18f24fea
   m_configObjects: {}
