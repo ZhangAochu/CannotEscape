@@ -26,7 +26,10 @@ public class CursorManager : MonoBehaviour
                 var teleport = clickObject.GetComponent<Teleport>();
                 teleport?.TeleportToScene();
                 break;
-
+            case "Item":
+                var item = clickObject.GetComponent<Item>();
+                item?.ItemClicked();
+                break;
         }
     }
     private Collider2D ObjectAtMousePosition()
