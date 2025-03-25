@@ -4,68 +4,78 @@ using UnityEngine;
 
 public class KnifeController : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float flySpeed = 15f;
-    private bool isFlying = false;
+
     private Rigidbody2D rb;
     private Vector3 initialPosition;
-    private Quaternion initialRotation;
+    private bool isActive = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
-        initialRotation = transform.rotation;
-
+        SetPhysicsActive(false);
     }
 
     void Update()
     {
-        // 自动回收检测
-        if (isFlying && IsOutOfScreen())
-        {
-            ResetKnife();
-        }
+        CheckBoundary();
     }
 
     void OnMouseDown()
     {
-        if (!isFlying)
-        {
-            LaunchKnife();
-        }
+        if (isActive) Launch();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Monster"))
+        bool hitMonster = false;
+
+        if (other.CompareTag("Monster"))
         {
-            KnifeThrowManager.Instance.HitMonster();
+            HandleMonsterCollision(other.gameObject);
+            hitMonster = true;
+            Debug.Log("命中怪物，开始重置");
             ResetKnife();
-            Destroy(collision.gameObject); // 销毁怪物
+        }
+
+        // 只有未击中怪物时重置
+        if (!hitMonster) {
+            Debug.Log("未命中怪物，开始重置");
+            ResetKnife();
         }
     }
 
-    void LaunchKnife()
+    void Launch()
     {
-        isFlying = true;
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        isActive = false;
+        SetPhysicsActive(true);
         rb.velocity = transform.up * flySpeed;
     }
 
     void ResetKnife()
     {
-        isFlying = false;
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-
-        // 重置位置和旋转
+        SetPhysicsActive(false);
         transform.position = initialPosition;
-        transform.rotation = initialRotation;
+        isActive = true;
     }
 
-    bool IsOutOfScreen()
+    void CheckBoundary()
     {
         Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
-        return viewportPos.y > 1.1f; // 超出屏幕上边界
+        if (viewportPos.y > 1.1f) ResetKnife();
+    }
+
+    void SetPhysicsActive(bool state)
+    {
+        rb.bodyType = state ? RigidbodyType2D.Dynamic : RigidbodyType2D.Kinematic;
+        rb.velocity = Vector2.zero;
+    }
+
+    void HandleMonsterCollision(GameObject monster)
+    {
+        KnifeThrowManager.Instance.HitMonster();
+        Destroy(monster);
     }
 }

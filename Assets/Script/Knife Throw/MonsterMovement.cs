@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float moveSpeed = 3f;
     public float leftBound = -5f;
     public float rightBound = 5f;
+
     private int direction = 1;
 
     void Update()
     {
-        // 2DºáÏòÒÆ¶¯£¨XÖá£©
-        transform.Translate(Vector2.right * direction * moveSpeed * Time.deltaTime);
+        MoveHorizontally();
+        CheckBoundaries();
+    }
 
-        if (transform.position.x > rightBound)
-            direction = -1;
-        else if (transform.position.x < leftBound)
-            direction = 1;
+    void MoveHorizontally()
+    {
+        transform.Translate(Vector2.right * direction * moveSpeed * Time.deltaTime);
+    }
+
+    void CheckBoundaries()
+    {
+        if (transform.position.x > rightBound) direction = -1;
+        if (transform.position.x < leftBound) direction = 1;
+    }
+
+    // µ÷ÊÔÏÔÊ¾ÒÆ¶¯·¶Î§
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(
+            new Vector2(leftBound, transform.position.y),
+            new Vector2(rightBound, transform.position.y)
+        );
     }
 }
