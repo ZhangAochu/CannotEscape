@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using UnityEngine;
-
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
@@ -41,10 +39,30 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 }
 public class TransitionManager : Singleton<TransitionManager>
 {
+    private bool canTransition=true;
+
+    private void OnEnable()
+    {
+        EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
+    }
+
+    private void OnGameStateChangeEvent(GameState gameState)
+    {
+        canTransition = gameState == GameState.Gameplay;
+    }
     public void Transition(string from, string to)
     {
         // TransitionToScene(from, to);
-        StartCoroutine(TransitionToScene(from, to));
+        if (canTransition)
+        {
+            StartCoroutine(TransitionToScene(from, to));
+        }
+        
     }
 
     private IEnumerator TransitionToScene(string from, string to)
