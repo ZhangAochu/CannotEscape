@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class ItemDataList_SO : ScriptableObject
 {
-    public List<ItemDetails> itemDataList;
+    public List<ItemDetails> itemDetailList;
 
     public ItemDetails GetItemDetails(ItemName itemName)
     {
-        return itemDataList.Find(i => i.itemName == itemName);
+        return itemDetailList.Find(i => i.itemName == itemName);
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class SlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class SlotUI : MonoBehaviour
 {
     public Image itemImage;
 
@@ -24,19 +24,4 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         this.gameObject.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        isSelected = !isSelected;
-        EventHandler.CallItemSelectedEvent(currentItem, isSelected);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }

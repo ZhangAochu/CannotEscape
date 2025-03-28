@@ -20,13 +20,13 @@ public static class EventHandler
     }
 
     public static event Action<GameState> GameStateChangeEvent;
-    
+
     public static void CallGameStateChangeEvent(GameState gameState)
     {
         GameStateChangeEvent?.Invoke(gameState);
     }
 
-    public static event Action<ItemDetails,int> UpdateUIEvent;
+    public static event Action<ItemDetails, int> UpdateUIEvent;
 
     public static void CallUpdateUIEvent(ItemDetails itemDetails, int index)
     {
@@ -47,7 +47,7 @@ public static class EventHandler
         AfterSceneLoadEvent?.Invoke();
     }
 
-    public static event Action<ItemDetails,bool> ItemSelectedEvent;
+    public static event Action<ItemDetails, bool> ItemSelectedEvent;
 
     public static void CallItemSelectedEvent(ItemDetails itemDetails, bool isSelected)
     {
