@@ -28,6 +28,11 @@ public class CursorManager : MonoBehaviour
     {
         canClick = ObjectAtMousePosition();
 
+        if(hand.gameObject.activeInHierarchy)
+        {
+            hand.position = Input.mousePosition;
+        }
+
         if(canClick && Input.GetMouseButtonDown(0))
         {
             ClickAction(ObjectAtMousePosition().gameObject);

@@ -7,6 +7,8 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
 {
     public Image itemImage;
 
+    public ItemTooltip tooltip;
+
     private ItemDetails currentItem;
 
     private bool isSelected;
@@ -27,15 +29,20 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         isSelected = !isSelected;
+        EventHandler.CallItemSelectedEvent(currentItem, isSelected);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        if(this.gameObject.activeInHierarchy)
+        {
+            tooltip.gameObject.SetActive(true);
+            tooltip.UpdateItemName(currentItem.itemName);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        tooltip.gameObject.SetActive(false);
     }
 }
