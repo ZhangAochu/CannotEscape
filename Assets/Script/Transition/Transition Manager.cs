@@ -71,7 +71,7 @@ public class TransitionManager : Singleton<TransitionManager>
     private IEnumerator TransitionToScene(string from, string to)
     {
         
-        EventHandlerUI.CallBeforeSceneUnloadEvent();
+        EventHandler.CallBeforeSceneUnloadEvent();
         yield return SceneManager.UnloadSceneAsync(from);//p4
        
         
@@ -80,7 +80,7 @@ public class TransitionManager : Singleton<TransitionManager>
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
 
-        EventHandlerUI.CallAfterSceneUnloadEvent();
+        EventHandler.CallAfterSceneLoadedEvent();
     }
 
 

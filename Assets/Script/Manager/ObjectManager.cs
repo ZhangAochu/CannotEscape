@@ -9,16 +9,16 @@ public class ObjectManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventHandlerUI.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
-        EventHandlerUI.AfterSceneUnloadEvent += OnAfterSceneUnloadEvent;
-        EventHandlerUI.UpdateUIEvent += OnUpdateUIEvent;
+        EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
+        EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
+        EventHandler.UpdateUIEvent += OnUpdateUIEvent;
     }
 
     private void OnDisable()
     {
-        EventHandlerUI.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
-        EventHandlerUI.AfterSceneUnloadEvent -= OnAfterSceneUnloadEvent;
-        EventHandlerUI.UpdateUIEvent -= OnUpdateUIEvent;
+        EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
+        EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
+        EventHandler.UpdateUIEvent -= OnUpdateUIEvent;
     }
 
 
@@ -31,7 +31,7 @@ public class ObjectManager : MonoBehaviour
                 itemAvailableDict.Add(item.itemName, true);
         }
     }
-    private void OnAfterSceneUnloadEvent()
+    private void OnAfterSceneLoadedEvent()
     {
         foreach (var item in FindObjectsOfType<Item>())
         {

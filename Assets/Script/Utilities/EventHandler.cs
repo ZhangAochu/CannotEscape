@@ -40,11 +40,11 @@ public static class EventHandler
         BeforeSceneUnloadEvent?.Invoke();
     }
 
-    public static event Action AfterSceneLoadEvent;
+    public static event Action AfterSceneLoadedEvent;
 
-    public static void CallAfterSceneLoadEvent()
+    public static void CallAfterSceneLoadedEvent()
     {
-        AfterSceneLoadEvent?.Invoke();
+        AfterSceneLoadedEvent?.Invoke();
     }
 
     public static event Action<ItemDetails, bool> ItemSelectedEvent;
