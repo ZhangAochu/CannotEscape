@@ -12,12 +12,12 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
-        EventHandlerUI.UpdateUIEvent += OnUpdateUIEvent;
+        EventHandler.UpdateUIEvent += OnUpdateUIEvent;
     }
 
     private void OnDisable()
     {
-        EventHandlerUI.UpdateUIEvent -= OnUpdateUIEvent;
+        EventHandler.UpdateUIEvent -= OnUpdateUIEvent;
     }
 
     private void OnUpdateUIEvent(ItemDetails itemDetails,int index)

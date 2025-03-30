@@ -23,7 +23,7 @@ public class InventoryManager : Singleton<InventoryManager>
             itemlist.Add(itemName);
             if (itemData != null)
             {
-                EventHandlerUI.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemlist.Count - 1);
+                EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemlist.Count - 1);
             }
             else
             {
