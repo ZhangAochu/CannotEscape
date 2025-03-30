@@ -54,4 +54,9 @@ public static class EventHandler
         ItemSelectedEvent?.Invoke(itemDetails, isSelected);
     }
 
+    public static event Action<int> ChangeItemEvent;
+    public static void CallChangeItemEvemt(int index)
+    {
+        ChangeItemEvent?.Invoke(index);
+    }
 }
