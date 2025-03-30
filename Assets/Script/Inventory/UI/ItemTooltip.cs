@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class ItemTooltip : MonoBehaviour
 {
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public Text itemNameText;
+
 
     public void UpdateItemName(ItemName itemName)
     {
