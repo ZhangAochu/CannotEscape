@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1996680264}
   - component: {fileID: 1996680263}
   m_Layer: 0
-  m_Name: Teleport to Sickroom
+  m_Name: Teleport to Dream
   m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: StartScene
-  sceneTo: Sickroom
+  sceneTo: Dream
 --- !u!61 &1996680264
 BoxCollider2D:
   m_ObjectHideFlags: 0
