@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518309998}
   - component: {fileID: 518309997}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Sickroom_RubbishPile Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

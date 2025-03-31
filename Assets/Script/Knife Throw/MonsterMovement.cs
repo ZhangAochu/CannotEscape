@@ -15,6 +15,7 @@ public class MonsterMovement : MonoBehaviour
     {
         MoveHorizontally();
         CheckBoundaries();
+        SetSpeedUp();
     }
 
     void MoveHorizontally()
@@ -36,5 +37,13 @@ public class MonsterMovement : MonoBehaviour
             new Vector2(leftBound, transform.position.y),
             new Vector2(rightBound, transform.position.y)
         );
+    }
+
+    void SetSpeedUp()
+    {
+        if (moveSpeed > 0 && moveSpeed < 30)
+        {
+            moveSpeed = moveSpeed + (float)0.01;
+        }
     }
 }

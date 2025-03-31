@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339408041}
   - component: {fileID: 1339408040}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Sickroom_Underbed Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

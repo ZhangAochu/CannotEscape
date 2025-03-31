@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108142789}
   - component: {fileID: 1108142788}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Corridor Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3cc0da7ee15e7f64da5a798bed4e9995, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d5e7aaa240d1df4ebbbee46e948fd58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,8 +200,8 @@ Transform:
   m_GameObject: {fileID: 1108142787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.2, z: 0}
-  m_LocalScale: {x: 2.6, y: 2.2, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 0.8645027, y: 0.641674, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1458733578}
   - component: {fileID: 1458733577}
   - component: {fileID: 1458733576}
+  - component: {fileID: 1458733579}
   m_Layer: 0
   m_Name: Teleport to Knife Throw
   m_TagString: Teleport
@@ -270,7 +271,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027054608, y: -0.007729888}
+  m_Offset: {x: -0.29236022, y: -0.21179962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -281,7 +282,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9047978, y: 1.3608615}
+  m_Size: {x: 0.33694917, y: 3.7919621}
   m_EdgeRadius: 0
 --- !u!4 &1458733578
 Transform:
@@ -292,12 +293,24 @@ Transform:
   m_GameObject: {fileID: 1458733575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: -3.61, z: 0}
+  m_LocalPosition: {x: -2.84, y: -1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458733579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458733575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fd0767cf7def04ebc77d56cf7f4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
