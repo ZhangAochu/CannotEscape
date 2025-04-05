@@ -18,6 +18,7 @@ public class ItemTooltip : MonoBehaviour
         itemNameText.text = itemName switch
         {
             ItemName.Remote => "Remote",
+            ItemName.Noodle => "Noodle",
             _ => ""
         };
     }

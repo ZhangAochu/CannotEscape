@@ -28,21 +28,21 @@ public static class EventHandler
 
     public static event Action<ItemDetails, int> UpdateUIEvent;
 
-    public static void CallUpdateUIEvent(ItemDetails itemDetails, int index)
+    public static void CallUpdateUIEvent(ItemDetails itemDetails, int index)//物品栏UI显示
     {
         UpdateUIEvent?.Invoke(itemDetails, index);
     }
 
     public static event Action BeforeSceneUnloadEvent;
 
-    public static void CallBeforeSceneUnloadEvent()
+    public static void CallBeforeSceneUnloadEvent()//用于更新场景中的物品
     {
         BeforeSceneUnloadEvent?.Invoke();
     }
 
     public static event Action AfterSceneLoadedEvent;
 
-    public static void CallAfterSceneLoadedEvent()
+    public static void CallAfterSceneLoadedEvent()//用于更新场景中的物品
     {
         AfterSceneLoadedEvent?.Invoke();
     }
@@ -54,9 +54,15 @@ public static class EventHandler
         ItemSelectedEvent?.Invoke(itemDetails, isSelected);
     }
 
-    public static event Action<int> ChangeItemEvent;
+    public static event Action<int> ChangeItemEvent;//切换物品
     public static void CallChangeItemEvemt(int index)
     {
         ChangeItemEvent?.Invoke(index);
+    }
+
+    public static event Action<ItemName> ItemUsedEvent;//切换物品
+    public static void CallItemUsedEvent(ItemName itemName)
+    {
+        ItemUsedEvent?.Invoke(itemName);
     }
 }

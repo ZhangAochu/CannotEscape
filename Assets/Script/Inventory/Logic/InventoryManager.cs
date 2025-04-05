@@ -11,12 +11,19 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         EventHandler.ChangeItemEvent += OnChangeItemEvent;
         EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
+        EventHandler.ItemUsedEvent += OnItemUsedEvent;
     }
 
     private void OnDisable()
     {
         EventHandler.ChangeItemEvent -= OnChangeItemEvent;
         EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
+        EventHandler.ItemUsedEvent -= OnItemUsedEvent;
+    }
+    private void OnChangeItemEvent(int index)
+    {
+        ItemDetails item = itemData.GetItemDetails(itemList[index]);
+        EventHandler.CallUpdateUIEvent(item, index);
     }
 
     private void OnAfterSceneLoadedEvent()
@@ -32,10 +39,13 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    private void OnChangeItemEvent(int index)
+    private void OnItemUsedEvent(ItemName itemName)
     {
-        ItemDetails item = itemData.GetItemDetails(itemList[index]);
-        EventHandler.CallUpdateUIEvent(item, index);
+        var index = GetItemIndex(itemName);
+        itemList.RemoveAt(index);
+        //todo:暂时实现物品使用效果
+        if (itemList.Count == 0)
+            EventHandler.CallUpdateUIEvent(null, -1);
     }
 
     private void Awake()
@@ -61,5 +71,15 @@ public class InventoryManager : Singleton<InventoryManager>
                 Debug.LogError("itemData is null, cannot call GetItemDetails!");
             }
         }
+    }
+
+    private int GetItemIndex(ItemName itemName)
+    {
+        for(int i = 0;i < itemList.Count;i++)
+        {
+            if (itemList[i] == itemName)
+                return i;
+        }
+        return -1;
     }
 }
