@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,15 +34,15 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         else
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject); // ¿ÉÑ¡£º¿ç³¡¾°±£Áô
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ç³¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
     }
 }
 public class TransitionManager : Singleton<TransitionManager>
 {
     //[SceneName] public string startScene;
-    
-    private bool canTransition=true;
+
+    private bool canTransition = true;
 
     private void OnEnable()
     {
@@ -65,16 +65,16 @@ public class TransitionManager : Singleton<TransitionManager>
         {
             StartCoroutine(TransitionToScene(from, to));
         }
-        
+
     }
 
     private IEnumerator TransitionToScene(string from, string to)
     {
-        
+
         EventHandler.CallBeforeSceneUnloadEvent();
         yield return SceneManager.UnloadSceneAsync(from);//p4
-       
-        
+
+
         yield return SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);
 
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
@@ -85,5 +85,4 @@ public class TransitionManager : Singleton<TransitionManager>
 
 
 }
-
 

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 278269534}
   - component: {fileID: 278269533}
   m_Layer: 0
-  m_Name: Teleport to Doctor
+  m_Name: Teleport to Door Locked
   m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: Sickroom
-  sceneTo: Sickroom Doctor
+  sceneTo: Sickroom Door Locked
 --- !u!61 &278269534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10910934, y: 0.49705404}
+  m_Offset: {x: 0.13335586, y: 0.32732844}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -197,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7182187, y: 1.1063663}
+  m_Size: {x: 2.4941072, y: 2.900609}
   m_EdgeRadius: 0
 --- !u!4 &278269535
 Transform:
@@ -208,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 278269532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.24, y: -1.07, z: 0}
+  m_LocalPosition: {x: 0.18, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
