@@ -6,6 +6,7 @@ public class Interactive : MonoBehaviour
 {
     public ItemName requiredItem;
     public ItemName rewardItem;
+    public bool ifDistory = true;
 
     public bool isDone;
 
@@ -16,6 +17,7 @@ public class Interactive : MonoBehaviour
             isDone = true;
             //使用物品,移除物品
             OnClickedAction();
+            if(ifDistory)
             EventHandler.CallItemUsedEvent(itemName);
         }
     }

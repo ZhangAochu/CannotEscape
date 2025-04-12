@@ -65,6 +65,11 @@ public class CursorManager : MonoBehaviour
                 var teleport = clickObject.GetComponent<Teleport>();
                 teleport?.TeleportToScene();
                 break;
+            case "Teleportby":
+                var teleportby = clickObject.GetComponent<Teleportby>();
+                if (holdItem)
+                    teleportby?.TeleportToSceneby(currentItem);
+                break;
             case "Item":
                 var item = clickObject.GetComponent<Item>();
                 item?.ItemClicked();

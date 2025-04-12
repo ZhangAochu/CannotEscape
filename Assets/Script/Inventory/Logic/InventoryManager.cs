@@ -77,7 +77,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    private int GetItemIndex(ItemName itemName)
+    public int GetItemIndex(ItemName itemName)
     {
         for(int i = 0;i < itemList.Count;i++)
         {
