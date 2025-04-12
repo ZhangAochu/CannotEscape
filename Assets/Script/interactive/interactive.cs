@@ -5,7 +5,8 @@ using UnityEngine;
 public class Interactive : MonoBehaviour
 {
     public ItemName requiredItem;
-    
+    public ItemName rewardItem;
+
     public bool isDone;
 
     public void CheckItem(ItemName itemName)
