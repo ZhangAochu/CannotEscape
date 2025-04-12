@@ -1239,10 +1239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7810e8c64dda1c246b26b58263075e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftButtton: {fileID: 1250532200}
-  rightButtton: {fileID: 902852693}
+  leftButton: {fileID: 1250532200}
+  rightButton: {fileID: 902852693}
   slotUI: {fileID: 773029889}
-  currentIndex: 0
+  currentIndex: -1
 --- !u!114 &1377320875
 MonoBehaviour:
   m_ObjectHideFlags: 0

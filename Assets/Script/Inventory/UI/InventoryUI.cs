@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Button leftButtton, rightButtton;
+    public Button leftButton, rightButton;
     public SlotUI slotUI;
 
     public int currentIndex;
@@ -26,8 +26,8 @@ public class InventoryUI : MonoBehaviour
         {
             slotUI.SetEmpty();
             currentIndex = -1;
-            leftButtton.interactable = false;
-            rightButtton.interactable = false;
+            leftButton.interactable = false;
+            rightButton.interactable = false;
         }
         else
         {
@@ -36,12 +36,12 @@ public class InventoryUI : MonoBehaviour
 
             if(index > 0)
             {
-                leftButtton.interactable = true;
+                leftButton.interactable = true;
             }
             if(index == -1)
             {
-                leftButtton.interactable = false;
-                rightButtton.interactable = false;
+                leftButton.interactable = false;
+                rightButton.interactable = false;
             }
         }
 
@@ -49,25 +49,32 @@ public class InventoryUI : MonoBehaviour
     }
     public void SwitchItem(int amount)
     {
-        var index = currentIndex + amount;
 
-        if(index < currentIndex)
+        var index = currentIndex + amount;
+        var itemList = InventoryManager.Instance.itemList;
+
+        if (index <= 0 && itemList.Count > 1)
         {
-            leftButtton.interactable = false;
-            rightButtton.interactable = true;
+            leftButton.interactable = false;
+            rightButton.interactable = true;
         }
-        else if(index > currentIndex)
+        else if(index >= itemList.Count - 1 && itemList.Count > 1)
         {
-            leftButtton.interactable = true;
-            rightButtton.interactable = false;
+            leftButton.interactable = true;
+            rightButton.interactable = false;
+        }
+        else if (itemList.Count<=1)
+        {
+            leftButton.interactable = false;
+            rightButton.interactable = false;
         }
         else
         {
-            leftButtton.interactable = true;
-            rightButtton.interactable = true;
+            leftButton.interactable = true;
+            rightButton.interactable = true;
         }
 
-        EventHandler.CallChangeItemEvemt(index);
+        EventHandler.CallChangeItemEvent(index);
     }
 
 }

@@ -19,6 +19,7 @@ public class ItemTooltip : MonoBehaviour
         {
             ItemName.Remote => "Remote",
             ItemName.Noodle => "Noodle",
+            ItemName.Hammer => "Hammer",
             _ => ""
         };
     }
