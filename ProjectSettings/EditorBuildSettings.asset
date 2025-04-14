@@ -14,4 +14,55 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Corridor.unity
     guid: ca183c550b507224ab78b91f18f24fea
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 1d3fc21cccdad0e4388a2ea6fbb42617
+  - enabled: 1
+    path: Assets/Scenes/Dream.unity
+    guid: 2cd04f1be15d09d4c9ec6cbe1815c518
+  - enabled: 1
+    path: Assets/Scenes/Laboratory 203.unity
+    guid: e1ebb96c411c891448b8e17f1b089eb2
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Box1.unity
+    guid: b6744f02337059b44b1d87f3f40b1833
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Box2.unity
+    guid: 2378a21b08d418140ad0146b6ad9a17d
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Clock.unity
+    guid: c15617eb1befdba489fb8188d83cfc05
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Doctor.unity
+    guid: 47c6375a73f244d4caaf77cac8d6ddea
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Door Locked.unity
+    guid: 85bd600110f69c346bc6e91fa7120f22
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Door Opened.unity
+    guid: 3b73844b34a1d0c4ba5158d4173646cf
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Push Box.unity
+    guid: 9e96c48f0ebc9c64e9d670208f0b7855
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Rubbish Bin.unity
+    guid: 4a6041372bb1c1447ac0f7a457f5144a
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom RubbishPile.unity
+    guid: 284d4e5a6e33faa4fbb44ac142aaf3c7
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom UnderBed.unity
+    guid: c5551dfa812863d42946aa3db9b363fd
+  - enabled: 1
+    path: Assets/Scenes/Corridor Components/Corridor Knife Throw.unity
+    guid: 0d8888fe716735e4ca880d1acff465c0
+  - enabled: 1
+    path: Assets/Scenes/Laboratory 203 Components/Lab203 Boss Fight.unity
+    guid: eac5e9e283c0f6041ace37eda4ed7ff8
+  - enabled: 1
+    path: Assets/Scenes/Laboratory 203 Components/Lab203 Casket.unity
+    guid: 90dca7f99b33c4342ac647ec602471c0
+  - enabled: 1
+    path: Assets/Scenes/Laboratory 203 Components/Lab203 Coded Lock.unity
+    guid: ffeb2d484d90105438ac1ae79981838a
   m_configObjects: {}

@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd270d0468bdc44d9bd0a5fd28722d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFrom: StartScene
+  sceneFrom: Start
   sceneTo: Dream
 --- !u!61 &1996680264
 BoxCollider2D:
