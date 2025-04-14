@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 1045136666}
   - component: {fileID: 1045136665}
   m_Layer: 0
-  m_Name: Charactor0
+  m_Name: Naratage
   m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
