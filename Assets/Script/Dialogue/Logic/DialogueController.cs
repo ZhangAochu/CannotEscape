@@ -86,7 +86,7 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         EventHandler.CallShowDialogueEvent(string.Empty);
-        FillDialogueStack();
+        FillDialogueStack();  
         isTalking = false;
         EventHandler.CallGameStateChangeEvent(GameState.Gameplay);
     }

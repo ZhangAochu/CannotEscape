@@ -1,26 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainCanvasController : MonoBehaviour
+public class ItemHolderController : MonoBehaviour
 {
-    [SerializeField] private string[] hideScenes; // 在Inspector中设置需要隐藏的场景名
-
-    private Canvas mainCanvas;
+    public string[] hideScenes; // 需要隐藏ItemHolder的场景名称
+    public GameObject itemHolder; // 拖拽ItemHolder对象到这里
 
     void Awake()
     {
-        mainCanvas = GetComponent<Canvas>();
-        DontDestroyOnLoad(gameObject); // 确保Canvas持久化
+        // 确保父Canvas是持久化的
+        DontDestroyOnLoad(transform.root.gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 检查当前场景是否需要隐藏Canvas
-        bool shouldHide = System.Array.Exists(hideScenes, sceneName => sceneName == scene.name);
-        mainCanvas.enabled = !shouldHide;
-
-        // 或者使用gameObject.SetActive(!shouldHide);
+        if (itemHolder != null)
+        {
+            bool shouldHide = System.Array.Exists(hideScenes, s => s == scene.name);
+            itemHolder.SetActive(!shouldHide);
+        }
     }
 
     void OnDestroy()

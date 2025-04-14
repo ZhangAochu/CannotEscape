@@ -11,21 +11,32 @@
 *.autosave
 
 # ProjectSettings（保留所有关键配置）
+<<<<<<< HEAD
 /[Pp]rojectSettings/*          # 忽略所有
 !/[Pp]rojectSettings/*.asset   # 允许所有 .asset 文件
 !/[Pp]rojectSettings/ProjectVersion.txt  # 允许版本文件
 !/[Pp]rojectSettings/EditorBuildSettings.asset  # 允许场景构建设置文件
+=======
+/[Pp]rojectSettings/*.meta
+/[Pp]rojectSettings/*.tmp
+!/[Pp]rojectSettings/*.asset
+!/[Pp]rojectSettings/*.txt
+>>>>>>> 8b8acba4a805a008fa3a90a7591b6c4530039bd5
 
 # Packages（保留依赖清单）
 /[Pp]ackages/*
 !/[Pp]ackages/manifest.json
+!/[Pp]ackages/packages-lock.json
 
 # IDE
 .vs/
 .idea/
+.vscode/
+.idea_modules/
 *.csproj
 *.sln
 *.userprefs
+*.iml
 
 # OS
 .DS_Store
@@ -35,3 +46,15 @@ Desktop.ini
 # Logs
 *.log
 *.stacktrace
+
+# Unity 2020+ 新增的缓存目录
+/[Gg]enerated/
+
+# Unity 自动保存文件
+*.autosave.*
+
+# Unity 崩溃报告
+[Cc]rash[Rr]eports/
+
+# 本地调试配置
+*.private.asset

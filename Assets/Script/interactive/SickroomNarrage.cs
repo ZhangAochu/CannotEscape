@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(DialogueController))] 
-public class Character0 : MonoBehaviour
+public class SickroomNarrage : MonoBehaviour
 {
     private DialogueController dialogueController;
 

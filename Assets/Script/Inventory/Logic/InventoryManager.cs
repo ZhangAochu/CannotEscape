@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : Singleton<InventoryManager>
 {
     public ItemDataList_SO itemData;
-    [SerializeField] private List<ItemName> itemList = new List<ItemName>();
+    public List<ItemName> itemList = new List<ItemName>();
 
     private void OnEnable()
     {
@@ -22,8 +22,12 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     private void OnChangeItemEvent(int index)
     {
-        ItemDetails item = itemData.GetItemDetails(itemList[index]);
-        EventHandler.CallUpdateUIEvent(item, index);
+        if(index >= 0 && index < itemList.Count)
+        {
+            ItemDetails item = itemData.GetItemDetails(itemList[index]);
+            EventHandler.CallUpdateUIEvent(item, index);
+        }
+
     }
 
     private void OnAfterSceneLoadedEvent()
@@ -73,7 +77,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    private int GetItemIndex(ItemName itemName)
+    public int GetItemIndex(ItemName itemName)
     {
         for(int i = 0;i < itemList.Count;i++)
         {
