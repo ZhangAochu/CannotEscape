@@ -7,8 +7,14 @@ public class Box : MonoBehaviour
     public LayerMask detectLayer;
     public Color finsihColor;
     Color originColor;
+ 
 
     private void Start()
+    {
+        StartGame();
+    }
+
+    private void StartGame()
     {
         originColor = GetComponent<SpriteRenderer>().color;
         FindObjectOfType<PushBoxManager>().totalBox++;
