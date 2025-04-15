@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c25cfda5f592dac449bbc929e33ac56e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - scoreText: {instanceID: 0}
+  - beatenMole: {fileID: 7379894261863179286, guid: 23f4eaa7c38e8894c88b11b5b555d022,
+      type: 3}
+  - gameController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

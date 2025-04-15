@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad737506bdc4e834aa20befdfcf778c3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - holeObj: {fileID: 4482994860814852909, guid: dadb9f189c93a8046a2f96576739c52c,
+      type: 3}
+  - moleObj: {fileID: 3590651778568390224, guid: 46fb9e637e4028b4485af2d9d4da492a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
