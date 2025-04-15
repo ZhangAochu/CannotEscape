@@ -569,6 +569,8 @@ MonoBehaviour:
   hideScenes:
   - Start
   - Dream
+  - Corridor Knife Throw
+  - Sickroom Push Box
   objectToHide: {fileID: 1377320870}
 --- !u!4 &704057225
 Transform:
