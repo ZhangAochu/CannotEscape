@@ -22,6 +22,10 @@ public class ItemTooltip : MonoBehaviour
             ItemName.Hammer => "Hammer",
             ItemName.MedicalRecord => "Record",
             ItemName.Power => "Power",
+            ItemName.MedicalRecord_2 => "Record2",
+            ItemName.MedicalRecord_3 => "Record3",
+            ItemName.MedicalRecord_4 => "Record4",
+            ItemName.MedicalRecord_all => "2468",
             _ => ""
         };
     }

@@ -8,6 +8,11 @@ public class InventoryManager : Singleton<InventoryManager>
     public ItemDataList_SO itemData;
     public List<ItemName> itemList = new List<ItemName>();
 
+    // 定义 4 个特定物品
+    private List<ItemName> specificItems = new List<ItemName> { ItemName.MedicalRecord, ItemName.MedicalRecord_2, ItemName.MedicalRecord_3, ItemName.MedicalRecord_4 };
+    // 定义新物品
+    private ItemName newItem = ItemName.MedicalRecord_all;
+
     private void OnEnable()
     {
         EventHandler.ChangeItemEvent += OnChangeItemEvent;
@@ -23,7 +28,7 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     private void OnChangeItemEvent(int index)
     {
-        if(index >= 0 && index < itemList.Count)
+        if (index >= 0 && index < itemList.Count)
         {
             ItemDetails item = itemData.GetItemDetails(itemList[index]);
             EventHandler.CallUpdateUIEvent(item, index);
@@ -38,7 +43,7 @@ public class InventoryManager : Singleton<InventoryManager>
             EventHandler.CallUpdateUIEvent(null, 1);
         else
         {
-            for(int i = 0; i < itemList.Count; i++)
+            for (int i = 0; i < itemList.Count; i++)
             {
                 EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemList[i]), i);
             }
@@ -56,9 +61,9 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         else
         {
-            EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemList[0]),0);
+            EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemList[0]), 0);
         }
-            
+
     }
 
     private void Awake()
@@ -75,20 +80,61 @@ public class InventoryManager : Singleton<InventoryManager>
         if (!itemList.Contains(itemName))
         {
             itemList.Add(itemName);
-            if (itemData != null)
+
+            // 检查是否包含 4 个特定物品
+            if (HasAllSpecificItems())
             {
-                EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemList.Count - 1);
+                // 删除 4 个特定物品
+                RemoveSpecificItems();
+
+                // 给予新物品
+                itemList.Add(newItem);
+                if (itemData != null)
+                {
+                    EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(newItem), itemList.Count - 1);
+                }
+                else
+                {
+                    Debug.LogError("itemData is null, cannot call GetItemDetails!");
+                }
             }
             else
             {
-                Debug.LogError("itemData is null, cannot call GetItemDetails!");
+                if (itemData != null)
+                {
+                    EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemName), itemList.Count - 1);
+                }
+                else
+                {
+                    Debug.LogError("itemData is null, cannot call GetItemDetails!");
+                }
             }
+        }
+    }
+
+    private bool HasAllSpecificItems()
+    {
+        foreach (ItemName specificItem in specificItems)
+        {
+            if (!itemList.Contains(specificItem))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void RemoveSpecificItems()
+    {
+        foreach (ItemName specificItem in specificItems)
+        {
+            itemList.Remove(specificItem);
         }
     }
 
     public int GetItemIndex(ItemName itemName)
     {
-        for(int i = 0;i < itemList.Count;i++)
+        for (int i = 0; i < itemList.Count; i++)
         {
             if (itemList[i] == itemName)
                 return i;

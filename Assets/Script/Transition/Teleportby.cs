@@ -22,6 +22,7 @@ public class  Teleportby : Teleport
             isDone = true;
             // 调用父类的传送方法
             base.TeleportToScene();
+            EventHandler.CallItemUsedEvent(itemName);
         }
 
         if (itemName == needItem)
