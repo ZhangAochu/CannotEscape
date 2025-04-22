@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryManager : Singleton<InventoryManager>
@@ -26,6 +27,7 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             ItemDetails item = itemData.GetItemDetails(itemList[index]);
             EventHandler.CallUpdateUIEvent(item, index);
+
         }
 
     }
@@ -49,7 +51,14 @@ public class InventoryManager : Singleton<InventoryManager>
         itemList.RemoveAt(index);
         //todo:暂时实现物品使用效果
         if (itemList.Count == 0)
+        {
             EventHandler.CallUpdateUIEvent(null, -1);
+        }
+        else
+        {
+            EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemList[0]),0);
+        }
+            
     }
 
     private void Awake()

@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
 {
     public Button leftButton, rightButton;
     public SlotUI slotUI;
+    public static InventoryUI Instance;
 
     public int currentIndex;
 
@@ -22,6 +23,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OnUpdateUIEvent(ItemDetails itemDetails,int index)
     {
+        var itemList = InventoryManager.Instance.itemList;
         if (itemDetails == null)
         {
             slotUI.SetEmpty();
@@ -37,6 +39,10 @@ public class InventoryUI : MonoBehaviour
             if(index > 0)
             {
                 leftButton.interactable = true;
+            }
+            if(index < itemList.Count - 1)
+            {
+                rightButton.interactable = true;
             }
             if(index == -1)
             {

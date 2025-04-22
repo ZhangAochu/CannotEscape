@@ -1,6 +1,6 @@
 public enum ItemName
 {
-    None,Remote,Noodle,Hammer, MedicalRecord
+    None,Remote,Noodle,Hammer, MedicalRecord,Power
 }
 
 public enum GameState

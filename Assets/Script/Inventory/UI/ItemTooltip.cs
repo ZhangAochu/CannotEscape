@@ -21,6 +21,7 @@ public class ItemTooltip : MonoBehaviour
             ItemName.Noodle => "Noodle",
             ItemName.Hammer => "Hammer",
             ItemName.MedicalRecord => "Record",
+            ItemName.Power => "Power",
             _ => ""
         };
     }
