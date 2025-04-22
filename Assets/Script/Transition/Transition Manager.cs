@@ -83,6 +83,5 @@ public class TransitionManager : Singleton<TransitionManager>
         EventHandler.CallAfterSceneLoadedEvent();
     }
 
-
 }
 
