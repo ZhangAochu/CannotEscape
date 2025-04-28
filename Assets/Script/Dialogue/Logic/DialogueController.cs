@@ -18,9 +18,34 @@ public class DialogueController : MonoBehaviour
 
     private bool isTalking;
 
+    public static DialogueController Instance;
+    private Stack<string> dialogueStack;
+
     private void Awake()
     {
         FillDialogueStack();
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void ShowDialogueFromItem(DialogueData_SO dialogueData,Action CallBack=null)
+    {
+        if (!isTalking)
+        {
+            dialogueStack = new Stack<string>();
+            for (int i = dialogueData.dialogueList.Count - 1; i >= 0; i--)
+            {
+                dialogueStack.Push(dialogueData.dialogueList[i]);
+            }
+            StartCoroutine(DialogueRoutine(dialogueStack,CallBack));
+        }
     }
     private void FillDialogueStack()
     {
@@ -65,7 +90,7 @@ public class DialogueController : MonoBehaviour
             }
         }
     }
-    private IEnumerator DialogueRoutine(Stack<string> data)
+    public IEnumerator DialogueRoutine(Stack<string> data,Action CallBack=null)
     {
         isTalking = true;  
         EventHandler.CallGameStateChangeEvent(GameState.Pause);
@@ -89,7 +114,11 @@ public class DialogueController : MonoBehaviour
         FillDialogueStack();  
         isTalking = false;
         EventHandler.CallGameStateChangeEvent(GameState.Gameplay);
+
+        //完成对话后的回调机制
+        CallBack?.Invoke();
     }
+
 
     private IEnumerator WaitForClick()
     {

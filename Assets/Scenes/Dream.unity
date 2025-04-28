@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEmpty: {fileID: 11400000, guid: e2e3d31968e54cb45afcc124e661ffc0, type: 2}
+  dialogueEmpty: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
   dialogueFinish: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
 --- !u!1 &2114244226
 GameObject:
