@@ -5,13 +5,13 @@ using UnityEngine;
 public class DialogueController : MonoBehaviour
 {
     public DialogueData_SO dialogueEmpty;
-    
+    public DialogueData_SO dialogueHas;
     public DialogueData_SO dialogueFinish;
     
     private Stack<string> Stack;
 
     private Stack<string> dialogueEmptyStack;
-
+    private Stack<string> dialogueHasStack;
     private Stack<string> dialogueFinishStack;
 
     private Coroutine currentRoutine;
@@ -50,6 +50,7 @@ public class DialogueController : MonoBehaviour
     private void FillDialogueStack()
     {
         dialogueEmptyStack = new Stack<string>();
+        dialogueHasStack = new Stack<string>();
         dialogueFinishStack = new Stack<string>();
 
         for (int i=dialogueEmpty.dialogueList.Count-1; i >=0; i--)
@@ -60,7 +61,12 @@ public class DialogueController : MonoBehaviour
         for(int i=dialogueFinish.dialogueList.Count - 1; i >= 0; i--)
         {
             dialogueFinishStack.Push(dialogueFinish.dialogueList[i]);
-        }   
+        }
+
+        for (int i = dialogueHas.dialogueList.Count - 1; i >= 0; i--)
+        {
+            dialogueHasStack.Push(dialogueHas.dialogueList[i]);
+        }
     }
     public void ShowDialogueEmpty()
     {
@@ -70,6 +76,13 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    public void ShowDialogueHas()
+    {
+        if (!isTalking)
+        {
+            StartCoroutine(DialogueRoutine(dialogueHasStack));
+        }
+    }
     public void ShowDialogueFinish()
     {
         if (!isTalking)

@@ -141,4 +141,15 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         return -1;
     }
+
+    /*
+     #region 检查物品是否存在
+        /// <summary>
+        /// 检查物品是否存在于物品列表中
+        /// @袁新坪
+     */
+    public bool HasItem(ItemName targetItem)
+    {
+        return itemList.Contains(targetItem);
+    }
 }

@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 864742856}
   - component: {fileID: 864742858}
   - component: {fileID: 864742859}
+  - component: {fileID: 864742860}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Item
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 3
+  dialogueData: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
 --- !u!61 &864742859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -350,6 +352,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.88, y: 3.49}
   m_EdgeRadius: 0
+--- !u!114 &864742860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864742855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEmpty: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
+  dialogueHas: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
+  dialogueFinish: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
 --- !u!1 &870299266
 GameObject:
   m_ObjectHideFlags: 0

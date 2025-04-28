@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Interactive : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class Interactive : MonoBehaviour
 
     public void CheckItem(ItemName itemName)
     {
+        OnClickedAction();
         if (itemName == requiredItem&&!isDone)
         {
             isDone = true;
             //使用物品,移除物品
-            OnClickedAction();
             if(ifDistory)
             EventHandler.CallItemUsedEvent(itemName);
         }
@@ -30,11 +31,15 @@ public class Interactive : MonoBehaviour
 
     }
 
-    public virtual void EmptyClicked()
+    public  void EmptyClicked()
     {
         if (requiredItem == ItemName.None)
         {
             Debug.Log("Empty Clicked");
+        }
+        else
+        {
+            OnClickedAction();
         }
     }
 }
