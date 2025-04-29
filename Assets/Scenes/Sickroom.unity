@@ -583,8 +583,12 @@ MonoBehaviour:
   sceneFrom: Sickroom
   sceneTo: Sickroom Push Box
   requiredItem: 1
-  needItem: 5
+  needItem: 8
   isDone: 0
+  successDialogue: {fileID: 11400000, guid: f87640f7fac19ed43b1f0c46d1cf04a7, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: 7a70c065a506f544a962f8d1ffd0c58f, type: 2}
+  notRequiredItemDialogue: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
+  emptyClickDialogue: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
 --- !u!1 &1045136662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1150,10 @@ MonoBehaviour:
   requiredItem: 3
   needItem: 0
   isDone: 0
+  successDialogue: {fileID: 11400000, guid: f87640f7fac19ed43b1f0c46d1cf04a7, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: 7a70c065a506f544a962f8d1ffd0c58f, type: 2}
+  notRequiredItemDialogue: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
+  emptyClickDialogue: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
 --- !u!1 &2092697817
 GameObject:
   m_ObjectHideFlags: 0

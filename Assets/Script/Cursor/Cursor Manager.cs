@@ -90,9 +90,16 @@ public class CursorManager : MonoBehaviour
                 break;
             case "Teleportby":
                 var teleportby = clickObject.GetComponent<Teleportby>();
+                /*修改teleportby?使其允许空点击
+                 * @袁新坪
+                 */
+                teleportby?.TeleportToSceneby(currentItem);
+                break;
+                /*
                 if (holdItem)
                     teleportby?.TeleportToSceneby(currentItem);
                 break;
+                */
             case "Item":
                 var item = clickObject.GetComponent<Item>();
                 item?.ItemClicked();
