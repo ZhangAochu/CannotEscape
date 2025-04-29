@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class Window : Interactive
 {
+    private DialogueController dialogueController;
+    public void ShowDialoguebegin()
+    {
+        dialogueController.ShowDialogueEmpty();
+    }
+    public void ShowDialoguehas()
+    {
+        dialogueController.ShowDialogueHas();
+    }
     protected override void OnClickedAction()
     {
-        //点击，销毁场景
-        this.gameObject.SetActive(false);
+        ItemName heldItem = CursorManager.Instance.CurrentItem;
+        if (heldItem==requiredItem)
+        {
+            ShowDialoguehas();
+            //点击，销毁场景
+            this.gameObject.SetActive(false);
 
-        isDone = true;
+            isDone = true;
+        }
+        else
+        {
+            ShowDialoguebegin();
+        }
     }
 
 }

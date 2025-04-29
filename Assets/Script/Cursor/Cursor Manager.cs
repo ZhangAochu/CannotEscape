@@ -14,6 +14,29 @@ public class CursorManager : MonoBehaviour
 
     private ItemName currentItem;
 
+    /** 
+     * 创建一个单例
+     * 提供一个对currentItem的只读访问
+     * @袁新坪
+     */
+    public ItemName CurrentItem
+    {
+        get { return currentItem; }
+    }
+    public static CursorManager Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    //
+
     private void OnEnable()
     {
         EventHandler.ItemSelectedEvent += OnItemSelectedEvent;

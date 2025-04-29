@@ -62,11 +62,15 @@ public class Doctor : Interactive
         }
         else
         {
-            if (InventoryManager.Instance.HasItem(ItemName.Noodle))
+            ItemName heldItem = CursorManager.Instance.CurrentItem;
+
+            if (heldItem == ItemName.Noodle)
             {
+                
                 ShowDialoguehas();
                 hasfinish = true;
                 InventoryManager.Instance.AddItem(rewardItem);
+
             }
             else
             {
