@@ -22,7 +22,7 @@ public class PushBoxManager : MonoBehaviour
     private void Update()
     {
         // ÐÂÔöESC°´¼ü¼ì²â
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ReStartGame();
         }
