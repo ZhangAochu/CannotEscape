@@ -10,8 +10,6 @@ public class Doctor : Interactive
     private BoxCollider2D coll;
 
     private DialogueController dialogueController;
-    bool hasfinish = false;
-
 
     private void Awake()
     {
@@ -56,25 +54,31 @@ public class Doctor : Interactive
     }
     protected override void OnClickedAction()
     {
-        if (hasfinish)
+        bool isAwake = GlobalDoctorState.Instance.doctorIsAwake;
+        if (!isAwake)
         {
-            ShowDialoguefinish();
+            ShowDialoguebegin();
         }
         else
         {
             ItemName heldItem = CursorManager.Instance.CurrentItem;
 
-            if (heldItem == ItemName.Noodle)
+            if (heldItem != ItemName.Noodle)
             {
-                
                 ShowDialoguehas();
-                hasfinish = true;
-                InventoryManager.Instance.AddItem(rewardItem);
 
             }
             else
             {
-                ShowDialoguebegin();
+                ShowDialoguefinish();
+                InventoryManager.Instance.AddItem(rewardItem);
+                coll.enabled = false;
+                isDone = true;
+
+                if (GlobalDoctorState.Instance != null)
+                {
+                    Destroy(GlobalDoctorState.Instance.gameObject);
+                }
             }
         }
         //¸øÓè²¡Àú

@@ -68,11 +68,11 @@ public class DialogueController : MonoBehaviour
             dialogueHasStack.Push(dialogueHas.dialogueList[i]);
         }
     }
-    public void ShowDialogueEmpty()
+    public void ShowDialogueEmpty(Action CallBack=null)
     {
         if (!isTalking)
         {
-            StartCoroutine(DialogueRoutine(dialogueEmptyStack));
+            StartCoroutine(DialogueRoutine(dialogueEmptyStack,CallBack));
         }
     }
 

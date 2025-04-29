@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: Sickroom Push Box
-  sceneTo: Sickroom
+  sceneTo: Sickroom TV
 --- !u!61 &110893910
 BoxCollider2D:
   m_ObjectHideFlags: 0
