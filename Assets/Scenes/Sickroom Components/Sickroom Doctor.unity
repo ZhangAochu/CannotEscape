@@ -229,9 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEmpty: {fileID: 11400000, guid: d92e7f6abbd4ec74aba5acec81ee05eb, type: 2}
-  dialogueHas: {fileID: 11400000, guid: 7a70c065a506f544a962f8d1ffd0c58f, type: 2}
-  dialogueFinish: {fileID: 11400000, guid: f87640f7fac19ed43b1f0c46d1cf04a7, type: 2}
+  dialogueEmpty: {fileID: 11400000, guid: d163f1bea8d5b6f429ede072b5c95301, type: 2}
+  dialogueHas: {fileID: 11400000, guid: e7803e2b1cef0a143844bb505e74b605, type: 2}
+  dialogueFinish: {fileID: 11400000, guid: a63d7064a0763044da37eb043e0eacc6, type: 2}
 --- !u!1 &228691408
 GameObject:
   m_ObjectHideFlags: 0

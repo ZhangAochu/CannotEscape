@@ -24,7 +24,7 @@ public class PushBoxDialogue: MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "PushBoxDialogue")
+        if (scene.name == "Sickroom Push Box")
         {
             DialogueEmpty();
         }

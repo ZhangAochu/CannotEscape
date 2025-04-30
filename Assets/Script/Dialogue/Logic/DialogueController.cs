@@ -1,4 +1,4 @@
-using System;
+锘縰sing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +7,7 @@ public class DialogueController : MonoBehaviour
     public DialogueData_SO dialogueEmpty;
     public DialogueData_SO dialogueHas;
     public DialogueData_SO dialogueFinish;
-    
+
     private Stack<string> Stack;
 
     private Stack<string> dialogueEmptyStack;
@@ -24,7 +24,6 @@ public class DialogueController : MonoBehaviour
     private void Awake()
     {
         FillDialogueStack();
-
         if (Instance == null)
         {
             Instance = this;
@@ -35,7 +34,7 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    public void ShowDialogueFromItem(DialogueData_SO dialogueData,Action CallBack=null)
+    public void ShowDialogueFromItem(DialogueData_SO dialogueData, Action CallBack = null)
     {
         if (!isTalking)
         {
@@ -44,7 +43,7 @@ public class DialogueController : MonoBehaviour
             {
                 dialogueStack.Push(dialogueData.dialogueList[i]);
             }
-            StartCoroutine(DialogueRoutine(dialogueStack,CallBack));
+            StartCoroutine(DialogueRoutine(dialogueStack, CallBack));
         }
     }
     private void FillDialogueStack()
@@ -53,12 +52,12 @@ public class DialogueController : MonoBehaviour
         dialogueHasStack = new Stack<string>();
         dialogueFinishStack = new Stack<string>();
 
-        for (int i=dialogueEmpty.dialogueList.Count-1; i >=0; i--)
+        for (int i = dialogueEmpty.dialogueList.Count - 1; i >= 0; i--)
         {
             dialogueEmptyStack.Push(dialogueEmpty.dialogueList[i]);
         }
 
-        for(int i=dialogueFinish.dialogueList.Count - 1; i >= 0; i--)
+        for (int i = dialogueFinish.dialogueList.Count - 1; i >= 0; i--)
         {
             dialogueFinishStack.Push(dialogueFinish.dialogueList[i]);
         }
@@ -68,11 +67,11 @@ public class DialogueController : MonoBehaviour
             dialogueHasStack.Push(dialogueHas.dialogueList[i]);
         }
     }
-    public void ShowDialogueEmpty(Action CallBack=null)
+    public void ShowDialogueEmpty(Action CallBack = null)
     {
         if (!isTalking)
         {
-            StartCoroutine(DialogueRoutine(dialogueEmptyStack,CallBack));
+            StartCoroutine(DialogueRoutine(dialogueEmptyStack, CallBack));
         }
     }
 
@@ -95,7 +94,7 @@ public class DialogueController : MonoBehaviour
     {
         if (isTalking && Input.GetMouseButtonDown(0))
         {
-            if(currentRoutine != null)
+            if (currentRoutine != null)
             {
                 StopCoroutine(currentRoutine);
                 currentRoutine = null;
@@ -103,20 +102,22 @@ public class DialogueController : MonoBehaviour
             }
         }
     }
-    public IEnumerator DialogueRoutine(Stack<string> data,Action CallBack=null)
+    public IEnumerator DialogueRoutine(Stack<string> data, Action CallBack = null)
     {
-        isTalking = true;  
+        isTalking = true;
         EventHandler.CallGameStateChangeEvent(GameState.Pause);
 
-        while(data.Count > 0)
+        while (data.Count > 0)
         {
-            if(data.TryPop(out string result))
+            if (data.TryPop(out string result))
             {
                 EventHandler.CallShowDialogueEvent(result);
 
                 var continueFlag = new bool[1] { false };
-                Action callback = () => continueFlag[0] = true;
-
+                Action callback = () =>
+                {
+                    continueFlag[0] = true;
+                };
                 EventHandler.OnDialogueContinue += callback;
                 yield return new WaitUntil(() => continueFlag[0]);
                 EventHandler.OnDialogueContinue -= callback;
@@ -124,18 +125,17 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         EventHandler.CallShowDialogueEvent(string.Empty);
-        FillDialogueStack();  
+        FillDialogueStack();
         isTalking = false;
         EventHandler.CallGameStateChangeEvent(GameState.Gameplay);
 
-        //完成对话后的回调机制
         CallBack?.Invoke();
     }
 
 
     private IEnumerator WaitForClick()
     {
-        while(!Input.GetMouseButtonDown(0))
+        while (!Input.GetMouseButtonDown(0))
         {
             yield return null;
         }

@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 7
-  dialogueData: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
+  dialogueData: {fileID: 11400000, guid: afa98ddcdc8168d4dbf159aa3e99fa63, type: 2}
 --- !u!114 &1613832423
 MonoBehaviour:
   m_ObjectHideFlags: 0

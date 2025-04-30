@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class EventHandler
-{
+{   
     public static event Action<string> ShowDialogueEvent;
 
     public static void CallShowDialogueEvent(string dialogue)

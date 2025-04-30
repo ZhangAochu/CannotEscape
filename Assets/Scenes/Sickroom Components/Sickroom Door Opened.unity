@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 3
-  dialogueData: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
+  dialogueData: {fileID: 11400000, guid: 13a77b8b7544d7349adacef6d5792331, type: 2}
 --- !u!61 &864742859
 BoxCollider2D:
   m_ObjectHideFlags: 0

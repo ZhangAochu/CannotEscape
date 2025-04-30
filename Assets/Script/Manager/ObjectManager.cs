@@ -23,7 +23,6 @@ public class ObjectManager : MonoBehaviour
     }
 
 
-
     private void OnBeforeSceneUnloadEvent()
     {
         foreach (var item in FindObjectsOfType<Item>())

@@ -585,10 +585,10 @@ MonoBehaviour:
   requiredItem: 1
   needItem: 8
   isDone: 0
-  successDialogue: {fileID: 11400000, guid: f87640f7fac19ed43b1f0c46d1cf04a7, type: 2}
-  needItemDialogue: {fileID: 11400000, guid: 7a70c065a506f544a962f8d1ffd0c58f, type: 2}
-  notRequiredItemDialogue: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
-  emptyClickDialogue: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
+  successDialogue: {fileID: 11400000, guid: a0c0d090f288ae14b9e9eb8722770290, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: 5091eabc1b77e784688f4a1756885529, type: 2}
+  notRequiredItemDialogue: {fileID: 11400000, guid: 8ac0220167ec6b546a8229dbb607d24b, type: 2}
+  emptyClickDialogue: {fileID: 11400000, guid: 6181e343d07293d44a1bf6c5ed02b9ca, type: 2}
 --- !u!1 &1045136662
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEmpty: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
+  dialogueEmpty: {fileID: 11400000, guid: 017ab8b09b806d840ae4f1328c8be5dc, type: 2}
   dialogueHas: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
   dialogueFinish: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
 --- !u!1 &1080253464
@@ -1150,10 +1150,10 @@ MonoBehaviour:
   requiredItem: 3
   needItem: 0
   isDone: 0
-  successDialogue: {fileID: 11400000, guid: f87640f7fac19ed43b1f0c46d1cf04a7, type: 2}
-  needItemDialogue: {fileID: 11400000, guid: 7a70c065a506f544a962f8d1ffd0c58f, type: 2}
-  notRequiredItemDialogue: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
-  emptyClickDialogue: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
+  successDialogue: {fileID: 11400000, guid: 93cb369768c46f6479ec5d1fd73312c5, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
+  notRequiredItemDialogue: {fileID: 11400000, guid: 1593a2dadb978c847a4361bc06bbdd3e, type: 2}
+  emptyClickDialogue: {fileID: 11400000, guid: e39a1c7adf6361d43bdbfcad5b3e9e01, type: 2}
 --- !u!1 &2092697817
 GameObject:
   m_ObjectHideFlags: 0

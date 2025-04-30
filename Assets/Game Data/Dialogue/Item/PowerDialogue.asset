@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84645d09b07d3b54a898b706a29fe0f7, type: 3}
+  m_Name: PowerDialogue
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - "\uFF08\u5C0F\u5FC3\u7FFC\u7FFC\u5730\u8D70\u5230\u5E8A\u5934\u67DC\u65C1\uFF0C\u62FF\u8D77\u95F9\u949F\uFF09\u8FD9\u4E2A...\u5E94\u8BE5\u6CA1\u95EE\u9898\u5427\uFF1F\u53CD\u6B63\u4E5F\u6CA1\u4EBA\u4F1A\u6CE8\u610F\u3002"
+  - "\u55EF\uFF0C\u53EF\u4EE5\u62FF\u7535\u6C60\u7ED9\u7535\u89C6\u88C5\u4E0A\u4E86\u3002"

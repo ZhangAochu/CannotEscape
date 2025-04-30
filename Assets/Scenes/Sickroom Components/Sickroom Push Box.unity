@@ -3157,7 +3157,7 @@ GameObject:
   - component: {fileID: 979118707}
   - component: {fileID: 979118706}
   m_Layer: 0
-  m_Name: Narrage
+  m_Name: Naratage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEmpty: {fileID: 11400000, guid: e3586dd5f6694554091fcb36a09815ea, type: 2}
+  dialogueEmpty: {fileID: 11400000, guid: 3e00e8acc29a886429d5830ac774d2a0, type: 2}
   dialogueHas: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
   dialogueFinish: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
 --- !u!4 &979118708

@@ -13,7 +13,7 @@ public class DialogueUI : MonoBehaviour
     public Button clickArea;
 
     private Coroutine typingCoroutine;//打字机效果
-    private bool isTyping=false;//是否正在打字
+    private bool isTyping = false;//是否正在打字
     private string currentDialogue;
     private void OnEnable()
     {
@@ -53,10 +53,10 @@ public class DialogueUI : MonoBehaviour
     {
         if (isTyping)
         {
-            if(typingCoroutine != null)
+            if (typingCoroutine != null)
             {
                 StopCoroutine(typingCoroutine);
-                typingCoroutine= null;
+                typingCoroutine = null;
             }
             dialogueText.text = currentDialogue;
             isTyping = false;
@@ -74,6 +74,10 @@ public class DialogueUI : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
+            if (Time.timeScale <= 0)
+            {
+                Time.timeScale = 1;
+            }
             yield return new WaitForSeconds(0.05f);
         }
         isTyping = false;

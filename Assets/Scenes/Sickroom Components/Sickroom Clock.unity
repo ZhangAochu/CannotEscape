@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 8
-  dialogueData: {fileID: 11400000, guid: 95e5aa8bcfa7f4d4ebe03cf4cf420f55, type: 2}
+  dialogueData: {fileID: 11400000, guid: 31030001b9d706e48b145740ec693f5b, type: 2}
 --- !u!212 &1420465362
 SpriteRenderer:
   m_ObjectHideFlags: 0

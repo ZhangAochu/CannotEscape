@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84645d09b07d3b54a898b706a29fe0f7, type: 3}
+  m_Name: PushBox
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - "\u7406\u7EBF\u4E2D"
+  - "\u8BF7\u5C06\u7535\u6E90\u7ED3\u70B9\u548C\u7535\u6C60\u8FDE\u63A5\u3002"
+  - "\u8BF7\u4F7F\u7528\u952E\u76D8\u4E2D\u2191\u63A7\u5236\u624B\u5411\u4E0A\u8FD0\u52A8\uFF0C\u2193\u63A7\u5236\u624B\u5411\u4E0B\u8FD0\u52A8\uFF0C\u2190\u63A7\u5236\u624B\u5411\u5DE6\u8FD0\u52A8\uFF0C\u2192\u63A7\u5236\u624B\u5411\u53F3\u8FD0\u52A8\uFF0C\u952E\u76D8R\u952E\u91CD\u5F00"
