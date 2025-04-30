@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -28,10 +29,23 @@ public class PauseManager : MonoBehaviour
         pausePanel.SetActive(false); // 隐藏暂停菜单面板
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         isPaused = true;
         Time.timeScale = 0; // 暂停游戏时间流动
         pausePanel.SetActive(true); // 显示暂停菜单面板
+    }
+
+    public void MainMenu()
+    {
+        isPaused = true;
+        Time.timeScale = 1; // 暂停游戏时间流动
+        SceneManager.LoadScene("Start");
+    }
+
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
