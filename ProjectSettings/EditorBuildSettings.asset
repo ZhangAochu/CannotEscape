@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sickroom Components/Sickroom TV.unity
     guid: 4d6854f69ca483049a39eb737c1d01d5
+  - enabled: 1
+    path: Assets/Scenes/Corridor 2.unity
+    guid: 16a8975a420c87e4094a35b081b826d0
   m_configObjects: {}

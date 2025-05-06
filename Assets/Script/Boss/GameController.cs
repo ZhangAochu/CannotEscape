@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+
+    public GameObject btn;
+    public GameObject btn_tele;
     //描述洞口的结构体
     public struct Hole
     {
@@ -77,6 +80,9 @@ public class GameController : MonoBehaviour
         MoleAppearFrequancy(appearFrequancy);
         //InvokeRepeating("MoleAppear",0f,0.5f);
         timer.CountDown(true);
+
+        btn.SetActive(false);
+        btn_tele.SetActive(false);
     }
 
     //随机生成地鼠
@@ -114,12 +120,17 @@ public class GameController : MonoBehaviour
         }
     }
 
+ 
     private void GameOver()
     {
         //不能再进行倒计时了，时间归0
         timer.CountDown(false);
         //将所有的InvokeRepeating()取消掉（停止生成地鼠）
         CancelInvoke();
+
+        btn.SetActive(true);
+        btn_tele.SetActive(true);
+
     }
 
     // Update is called once per frame
