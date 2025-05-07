@@ -1,48 +1,100 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// Mole.cs
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Mole : MonoBehaviour
 {
-    //显示分数的Text控件
-    public Text scoreText;
-    //记录分数的变量
-    public static int score = 0;
-    //显示被打地鼠
-    public GameObject beatenMole;
-    //对应洞口的id
-    public int id;
-    public GameController gameController;
+    private const string BOSS_SCENE_NAME = "Lab203 Boss Fight";
 
-    // Start is called before the first frame update
+    [Header("组件引用")]
+    public Text scoreText;
+    public GameObject beatenMole;
+
+    [Header("游戏参数")]
+    public int id;
+    public static int score = 0;
+
+    private GameController gameController;
+
     void Start()
     {
-        //获得显示分数的Text控件
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
-        //找到具有GameController的对象
-        gameController = GameController.FindObjectOfType<GameController>();
-        //3s后，销毁该生成的地鼠
-        Destroy(gameObject,2f);
+        EnsureInCorrectScene();
+        SetupReferences();
+        Destroy(gameObject, 2f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EnsureInCorrectScene()
     {
-        
+        Scene targetScene = SceneManager.GetSceneByName(BOSS_SCENE_NAME);
+        if (!targetScene.IsValid()) return;
+
+        if (gameObject.scene != targetScene)
+        {
+            SceneManager.MoveGameObjectToScene(gameObject, targetScene);
+            transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y,
+                targetScene.GetRootGameObjects()[0].transform.position.z
+            );
+        }
     }
 
-    //重写MonoBehaviour.OnMouseDown()
-    void OnMouseDown() 
+    private void SetupReferences()
     {
-        //打到地鼠，分数+1
+        if (scoreText == null)
+        {
+            scoreText = GameObject.Find("ScoreText")?.GetComponent<Text>();
+        }
+
+        if (gameController == null)
+        {
+            gameController = FindObjectOfType<GameController>();
+        }
+    }
+
+    public void SetGameController(GameController controller)
+    {
+        gameController = controller;
+    }
+
+    void OnMouseDown()
+    {
+        if (gameController == null) return;
+
         score++;
-        //显示分数
-        scoreText.text = "Score:" + score;
-        //实例化一个被打地鼠的对象
-        gameController.holes[id].mole = Instantiate(beatenMole,gameObject.transform.position,Quaternion.identity);
-        //销毁正常的地鼠
+        UpdateScoreDisplay();
+        CreateBeatenMole();
+        UpdateGameController();
+        DestroySelf();
+    }
+
+    private void UpdateScoreDisplay()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = $"Score: {score}";
+        }
+    }
+
+    private void CreateBeatenMole()
+    {
+        Scene targetScene = SceneManager.GetSceneByName(BOSS_SCENE_NAME);
+        GameObject beaten = Instantiate(beatenMole, transform.position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(beaten, targetScene);
+    }
+
+    private void UpdateGameController()
+    {
+        if (gameController != null && id >= 0 && id < gameController.holes.Length)
+        {
+            gameController.holes[id].mole = null;
+            gameController.holes[id].isAppear = false;
+        }
+    }
+
+    private void DestroySelf()
+    {
         Destroy(gameObject);
-        //Debug.Log("OnMouseDown");
     }
 }

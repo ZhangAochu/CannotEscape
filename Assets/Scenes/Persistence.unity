@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b60132df85dc746b4ea44712a356e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetAspect: 1.7777778
 --- !u!1 &122095664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd8ecde37277a54cb24e93b86bae325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Start
+  sceneName: 1
 --- !u!4 &1367071904
 Transform:
   m_ObjectHideFlags: 0
