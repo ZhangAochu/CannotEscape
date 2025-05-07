@@ -1,158 +1,159 @@
-﻿using System.Collections;
+﻿// GameController.cs
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+    [Header("游戏元素配置")]
     public GameObject btn;
     public GameObject btn_tele;
-    //描述洞口的结构体
+    public float intervalPosX = 2;
+    public float intervalPosY = 1;
+    public GameObject holeObj;
+    public GameObject moleObj;
+    public Timer timer;
+    public float appearFrequancy = 2f;
+
+    [Header("场景配置")]
+    private const string BOSS_SCENE_NAME = "Lab203 Boss Fight";
+
+    private Canvas bcanvas;
+    private bool canIncreaseMole = true;
+
     public struct Hole
     {
-        //洞口是否出现了地鼠
         public bool isAppear;
-        //洞口的横坐标
         public int holeX;
-        //洞口的纵坐标
         public int holeY;
-        //该洞口出现的地鼠
         public GameObject mole;
     }
 
-    //表示洞口的一维数组，保存所有洞口的信息
     public Hole[] holes;
-    //两个洞口间的横向间隔
-    public float intervalPosX = 2;
-    //两个洞口间的纵向间隔
-    public float intervalPosY = 1;
-    //要实例化的洞口预制体
-    public GameObject holeObj;
-    //要实例化的地鼠预制体
-    public GameObject moleObj;
-    //计时器控件
-    public Timer timer;
-    //地鼠出现频率（间隔2s）
-    public float appearFrequancy = 2f;
-    //是否修改地鼠出现频率
-    private bool canIncreaseMole = true;
 
-    //初始化开始界面函数（初始化九个洞口位置）
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject); // 保持跨场景存在
+        PreloadBossScene();
+        InitMap();
+        StartGame();
+    }
+
+    private void PreloadBossScene()
+    {
+        if (!SceneManager.GetSceneByName(BOSS_SCENE_NAME).isLoaded)
+        {
+            SceneManager.LoadScene(BOSS_SCENE_NAME, LoadSceneMode.Additive);
+        }
+    }
+
     private void InitMap()
     {
-        //左下角洞口的坐标
-        Vector2 originalPos = new Vector2(-2,-2);
-        //分配存储洞口信息的内存
+        bcanvas = GameObject.Find("Boss Canvas").GetComponent<Canvas>();
+        Vector2 originalPos = new Vector2(-2, -2);
         holes = new Hole[9];
-        //初始化每个洞口的位置信息并实例化洞口对象（预制体）
-        for(int i = 0; i < 3; i++)
+
+        Scene targetScene = SceneManager.GetSceneByName(BOSS_SCENE_NAME);
+
+        for (int i = 0; i < 3; i++)
         {
-            for(int j = 0;j < 3; j++)
+            for (int j = 0; j < 3; j++)
             {
-                holes[i*3+j] = new Hole();
-                //计算每一个洞口的横坐标
-                holes[i*3+j].holeX = (int)(originalPos.x + j*intervalPosX);
-                //计算每一个洞口的纵坐标
-                holes[i*3+j].holeY = (int)(originalPos.y + i*intervalPosY);
-                //表示当前洞口没有地鼠
-                holes[i*3+j].isAppear = false;
-                //实例化洞口对象
-                Instantiate(holeObj,new Vector3(holes[i*3+j].holeX,holes[i*3+j].holeY,0),Quaternion.identity);
+                int index = i * 3 + j;
+                holes[index] = new Hole
+                {
+                    holeX = (int)(originalPos.x + j * intervalPosX),
+                    holeY = (int)(originalPos.y + i * intervalPosY),
+                    isAppear = false
+                };
+
+                GameObject hole = Instantiate(holeObj,
+                    new Vector3(holes[index].holeX, holes[index].holeY, 0),
+                    Quaternion.identity);
+
+                MoveToScene(hole, targetScene);
             }
         }
     }
 
-    //地鼠出现的频率
-    private void MoleAppearFrequancy(float appearFrequancy)
+    private void StartGame()
     {
-        //停止产生地鼠
-        CancelInvoke();
-        //立即以appearFrequancy的频率重新开始产生地鼠
-        InvokeRepeating("MoleAppear",0f,appearFrequancy);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //初始化洞口
-        InitMap();
-        //地鼠以0.7s的间隔出现
         MoleAppearFrequancy(appearFrequancy);
-        //InvokeRepeating("MoleAppear",0f,0.5f);
         timer.CountDown(true);
-
         btn.SetActive(false);
         btn_tele.SetActive(false);
     }
 
-    //随机生成地鼠
+    private void MoleAppearFrequancy(float frequency)
+    {
+        CancelInvoke();
+        InvokeRepeating(nameof(MoleAppear), 0f, frequency);
+    }
+
     private void MoleAppear()
     {
-        //获得随机数
-        int id = UnityEngine.Random.Range(0,9);
-        //判断当前洞口是否已经有地鼠了，为了放置死机，需要在Mole类中写Destroy函数
-        while(holes[id].isAppear == true)
-        {
-            //如果当前洞口有随机数，则重新获得随机数
-            id = UnityEngine.Random.Range(0,9);
-        }
-        //在对应id的洞口实例化地鼠对象
-        holes[id].mole = Instantiate(moleObj,new Vector3(holes[id].holeX,holes[id].holeY,0),Quaternion.identity);
-        //将随机生成的地鼠的id与洞口的id匹配
-        holes[id].mole.GetComponent<Mole>().id = id;
-        //将对应id洞口的isAppear置为true
+        int id = GetAvailableHoleID();
+        if (id == -1) return;
+
+        Scene targetScene = SceneManager.GetSceneByName(BOSS_SCENE_NAME);
+        Vector3 pos = new Vector3(holes[id].holeX, holes[id].holeY, 0);
+
+        holes[id].mole = Instantiate(moleObj, pos, Quaternion.identity);
+        MoveToScene(holes[id].mole, targetScene);
+
+        Mole moleComponent = holes[id].mole.GetComponent<Mole>();
+        moleComponent.id = id;
+        moleComponent.SetGameController(this);
+
         holes[id].isAppear = true;
-        //Debug.Log("MoleAppear");
     }
 
-    //清除洞口地鼠信息
+    private int GetAvailableHoleID()
+    {
+        List<int> availableIDs = new List<int>();
+        for (int i = 0; i < holes.Length; i++)
+        {
+            if (!holes[i].isAppear) availableIDs.Add(i);
+        }
+        return availableIDs.Count > 0 ? availableIDs[Random.Range(0, availableIDs.Count)] : -1;
+    }
+
     public void CleanHoleState()
     {
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < holes.Length; i++)
         {
-            for(int j = 0;j < 3; j++)
-            {
-                if(holes[i*3+j].mole == null)
-                {
-                    holes[i*3+j].isAppear = false;
-                }
-            }
+            if (holes[i].mole == null) holes[i].isAppear = false;
         }
     }
 
- 
     private void GameOver()
     {
-        //不能再进行倒计时了，时间归0
         timer.CountDown(false);
-        //将所有的InvokeRepeating()取消掉（停止生成地鼠）
         CancelInvoke();
-
         btn.SetActive(true);
         btn_tele.SetActive(true);
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //检测并清除isAppear
         CleanHoleState();
-        //如果计时还剩15s，修改地鼠出现频率
-        if(timer.time < 15 && canIncreaseMole == true)
+
+        if (timer.time < 15 && canIncreaseMole)
         {
-            //修改地鼠出现频率
-            appearFrequancy -= 0.1f;
-            //地鼠以appearFrequancy的频率出现
+            appearFrequancy = Mathf.Max(0.5f, appearFrequancy - 0.1f);
             MoleAppearFrequancy(appearFrequancy);
-            //不能再修改地鼠出现频率
             canIncreaseMole = false;
         }
-        //如果计时结束
-        if(timer.time < 0)
+
+        if (timer.time < 0) GameOver();
+    }
+
+    private void MoveToScene(GameObject obj, Scene scene)
+    {
+        if (scene.IsValid() && obj.scene != scene)
         {
-            //游戏结束提示
-            GameOver();
+            SceneManager.MoveGameObjectToScene(obj, scene);
         }
     }
 }
