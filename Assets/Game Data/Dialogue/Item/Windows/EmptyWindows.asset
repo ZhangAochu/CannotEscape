@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84645d09b07d3b54a898b706a29fe0f7, type: 3}
-  m_Name: Empty
+  m_Name: EmptyWindows
   m_EditorClassIdentifier: 
   dialogueList:
   - "\u7A97\u6237\u88AB\u5C01\u5F97\u4E25\u4E25\u5B9E\u5B9E\uFF0C\u4F3C\u4E4E\u5F88\u96BE\u5F92\u624B\u6253\u5F00\u3002"

@@ -431,6 +431,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &780900840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780900841}
+  m_Layer: 0
+  m_Name: Naratage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780900841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780900840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.18, y: -1.4114714, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871430656
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,28 +472,14 @@ GameObject:
   m_Component:
   - component: {fileID: 871430659}
   - component: {fileID: 871430658}
-  - component: {fileID: 871430657}
+  - component: {fileID: 871430660}
   m_Layer: 0
-  m_Name: Teleport to Lab203
+  m_Name: Teleport to Final Scene
   m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &871430657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871430656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da902013944a9bf47945a7693ae72646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneFrom: Lab203 Boss Fight
-  sceneTo: Laboratory 203
 --- !u!61 &871430658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -523,6 +540,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871430660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871430656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd270d0468bdc44d9bd0a5fd28722d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFrom: Lab203 Boss Fight
+  sceneTo: Final Scene
 --- !u!1 &1062677397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,3 +1068,4 @@ SceneRoots:
   - {fileID: 871430659}
   - {fileID: 260320533}
   - {fileID: 1965337455}
+  - {fileID: 780900841}

@@ -10,6 +10,9 @@ TagManager:
   - Interactive
   - Teleportby
   - Target
+  - TeleportNeed
+  - TeleportDialogue
+  - TeleportTime
   layers:
   - Default
   - TransparentFX

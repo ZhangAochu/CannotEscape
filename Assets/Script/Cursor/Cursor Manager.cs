@@ -95,11 +95,19 @@ public class CursorManager : MonoBehaviour
                  */
                 teleportby?.TeleportToSceneby(currentItem);
                 break;
-                /*
-                if (holdItem)
-                    teleportby?.TeleportToSceneby(currentItem);
+            case "TeleportNeed":
+                var teleportNeed = clickObject.GetComponent<TeleportNeed>();
+                teleportNeed?.TeleportToSceneDialogue();
                 break;
-                */
+            case "TeleportDialogue":
+                var teleportDialogue = clickObject.GetComponent<TeleportDialogue>();
+                teleportDialogue?.TeleportToSceneDialogue();
+                break;
+            /*
+            if (holdItem)
+                teleportby?.TeleportToSceneby(currentItem);
+            break;
+            */
             case "Item":
                 var item = clickObject.GetComponent<Item>();
                 item?.ItemClicked();

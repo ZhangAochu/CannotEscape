@@ -132,28 +132,14 @@ GameObject:
   m_Component:
   - component: {fileID: 238057479}
   - component: {fileID: 238057478}
-  - component: {fileID: 238057477}
+  - component: {fileID: 238057480}
   m_Layer: 0
   m_Name: Teleport to Boss Fight
-  m_TagString: Teleport
+  m_TagString: TeleportNeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &238057477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238057476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd270d0468bdc44d9bd0a5fd28722d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneFrom: Laboratory 203
-  sceneTo: Lab203 Boss Fight
 --- !u!61 &238057478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,98 +200,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &395740325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 395740328}
-  - component: {fileID: 395740327}
-  - component: {fileID: 395740326}
-  m_Layer: 0
-  m_Name: Teleport to Final Scene
-  m_TagString: Teleport
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &395740326
+--- !u!114 &238057480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395740325}
+  m_GameObject: {fileID: 238057476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd270d0468bdc44d9bd0a5fd28722d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d236443adefde44f9fdc63b3fadb611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFrom: Laboratory 203
-  sceneTo: Final Scene
---- !u!61 &395740327
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395740325}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.7014713}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 2.8032446}
-  m_EdgeRadius: 0
---- !u!4 &395740328
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395740325}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9, y: -0.1, z: 0}
-  m_LocalScale: {x: 1.2246336, y: 1.0071, z: 1.0071}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  sceneTo: Lab203 Boss Fight
+  FirstDialogue: {fileID: 11400000, guid: d417a8947bcb08f4d8a89ef4dcc8209e, type: 2}
 --- !u!1 &1882285823
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882285824}
+  - component: {fileID: 1882285826}
+  - component: {fileID: 1882285825}
   m_Layer: 0
   m_Name: Naratage
   m_TagString: Untagged
@@ -337,6 +248,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882285825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882285823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eeff018b1e75d443a2a5011c6ba5fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1882285826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882285823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1995dd0586ecbe04fb5210946a3bc11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEmpty: {fileID: 11400000, guid: b2e0ff3c9a5147242882c8603310a90f, type: 2}
+  dialogueHas: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
+  dialogueFinish: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
 --- !u!1 &2087366355
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,28 +369,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2129944258}
   - component: {fileID: 2129944257}
-  - component: {fileID: 2129944256}
+  - component: {fileID: 2129944259}
   m_Layer: 0
   m_Name: Teleport to Coded Lock
-  m_TagString: Teleport
+  m_TagString: TeleportDialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2129944256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129944255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd270d0468bdc44d9bd0a5fd28722d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneFrom: Laboratory 203
-  sceneTo: Lab203 Coded Lock
 --- !u!61 &2129944257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -513,6 +437,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129944259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129944255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51a05f861a97904789ea0165dddf98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFrom: Laboratory 203
+  sceneTo: Lab203 Coded Lock
+  FirstDialogue: {fileID: 11400000, guid: 376a417b0ba23f94a988b1fc41772317, type: 2}
+  EmptyDialogue: {fileID: 11400000, guid: a23950899daa5d647bb8ffb1b9697d1c, type: 2}
+  can: {fileID: 238057480}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -520,5 +461,4 @@ SceneRoots:
   - {fileID: 2087366357}
   - {fileID: 2129944258}
   - {fileID: 238057479}
-  - {fileID: 395740328}
   - {fileID: 1882285824}

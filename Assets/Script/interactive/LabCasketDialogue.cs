@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(DialogueController))]
-public class LaboratoryNaratage : MonoBehaviour
+public class LabCasketDialogue : MonoBehaviour
 {
     private DialogueController dialogueController;
-    private static bool isfirsttime = true;
 
     private void Awake()
     {
@@ -25,11 +24,9 @@ public class LaboratoryNaratage : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Laboratory 203"&&isfirsttime)
+        if (scene.name == "Lab203 Casket")
         {
-            isfirsttime = false;
             DialogueEmpty();
-            
         }
     }
 
