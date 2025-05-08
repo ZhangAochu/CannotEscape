@@ -133,6 +133,8 @@ public class GameController : MonoBehaviour
         CancelInvoke();
         btn.SetActive(true);
         btn_tele.SetActive(true);
+
+        Cursor.visible = true;
     }
 
     void Update()
