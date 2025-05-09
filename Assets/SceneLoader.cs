@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private string sceneName; // 填写第二个场景的名称
+    [SerializeField] public string sceneName; // 填写第二个场景的名称
 
     void Start()
     {

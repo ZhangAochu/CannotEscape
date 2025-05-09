@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 1750697024}
   - component: {fileID: 1750697023}
   m_Layer: 0
-  m_Name: ' Final Scene Background'
+  m_Name: Final Scene Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

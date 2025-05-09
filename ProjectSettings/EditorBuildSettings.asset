@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Corridor 2.unity
     guid: 16a8975a420c87e4094a35b081b826d0
+  - enabled: 1
+    path: Assets/Scenes/Sickroom Components/Sickroom Lock.unity
+    guid: c9ace0ea89ed8b44eacbee340964a4b7
   m_configObjects: {}

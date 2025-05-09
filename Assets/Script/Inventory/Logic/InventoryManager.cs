@@ -26,15 +26,14 @@ public class InventoryManager : Singleton<InventoryManager>
         EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
         EventHandler.ItemUsedEvent -= OnItemUsedEvent;
     }
+
     private void OnChangeItemEvent(int index)
     {
         if (index >= 0 && index < itemList.Count)
         {
             ItemDetails item = itemData.GetItemDetails(itemList[index]);
             EventHandler.CallUpdateUIEvent(item, index);
-
         }
-
     }
 
     private void OnAfterSceneLoadedEvent()
@@ -63,11 +62,13 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             EventHandler.CallUpdateUIEvent(itemData.GetItemDetails(itemList[0]), 0);
         }
-
     }
 
-    private void Awake()
+    // 修改此处：添加 override 关键字
+    protected override void Awake()
     {
+        base.Awake(); // 调用基类的 Awake 方法
+
         // 确保 itemData 不为 null
         if (itemData == null)
         {
@@ -142,12 +143,7 @@ public class InventoryManager : Singleton<InventoryManager>
         return -1;
     }
 
-    /*
-     #region 检查物品是否存在
-        /// <summary>
-        /// 检查物品是否存在于物品列表中
-        /// @袁新坪
-     */
+ 
     public bool HasItem(ItemName targetItem)
     {
         return itemList.Contains(targetItem);
