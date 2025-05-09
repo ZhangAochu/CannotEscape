@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: SCU stu Team Zhang
+  companyName: "\u56DB\u5DDD\u5927\u5B662023\u7EA7\u8F6F\u4EF6\u5B66\u9662Minigame\u9879\u76EE\u5236\u8BFE\u7A0B\u7B2C\u516B\u5C0F\u7EC4"
   productName: Cannot Escape
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
