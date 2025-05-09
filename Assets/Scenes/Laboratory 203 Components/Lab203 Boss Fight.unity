@@ -986,8 +986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 260320531}
   btn_tele: {fileID: 871430656}
-  intervalPosX: 2
-  intervalPosY: 1
+  intervalPosX: 4
+  intervalPosY: 3
   holeObj: {fileID: 4482994860814852909, guid: dadb9f189c93a8046a2f96576739c52c, type: 3}
   moleObj: {fileID: 3590651778568390224, guid: 46fb9e637e4028b4485af2d9d4da492a, type: 3}
   timer: {fileID: 1464151548}
