@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItem: 2
   rewardItem: 4
-  ifDistory: 1
+  ifDistory: 0
   isDone: 0
 --- !u!61 &85555839
 BoxCollider2D:
@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doctorIsAwake: 0
+  isInitialized: 0
 --- !u!4 &1987635167
 Transform:
   m_ObjectHideFlags: 0

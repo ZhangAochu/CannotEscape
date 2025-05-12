@@ -9,7 +9,7 @@ public class InventoryManager : Singleton<InventoryManager>
     public List<ItemName> itemList = new List<ItemName>();
 
     // 定义 4 个特定物品
-    private List<ItemName> specificItems = new List<ItemName> { ItemName.MedicalRecord, ItemName.MedicalRecord_2, ItemName.MedicalRecord_3, ItemName.MedicalRecord_4 };
+    private List<ItemName> specificItems = new List<ItemName> { ItemName.MedicalRecord_2, ItemName.MedicalRecord_3, ItemName.MedicalRecord_4 };
     // 定义新物品
     private ItemName newItem = ItemName.MedicalRecord_all;
 
